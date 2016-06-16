@@ -4,6 +4,7 @@ window.onload=function(){
 function drag(id){
 	//获取拖拽的元素
 	var oDiv=document.getElementById(id);
+	//鼠标按下的时候
 	oDiv.onmousedown=function(ev){
 		var ev=ev||window.event;
 		var disX=ev.clientX-oDiv.offsetLeft;
