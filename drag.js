@@ -2,6 +2,7 @@ window.onload=function(){
 	drag('div1');
 }
 function drag(id){
+	//获取拖拽的元素
 	var oDiv=document.getElementById(id);
 	oDiv.onmousedown=function(ev){
 		var ev=ev||window.event;
