@@ -11,8 +11,15 @@ function drag(id){
 		var disY=ev.clientY-oDiv.offsetTop;
 		document.onmousemove=function(ev){
 			var ev=ev||window.event;
-			oDiv.style.left=ev.clientX-disX+'px';
-			oDiv.style.top=ev.clientY-disY+'px';
+			var posX=ev.clientX-disX;
+			var posY=ev.clientY-disY;
+			if(posX<0){
+				posX=0;
+			}else if(posX>document.documentElement.clientWidth-oDiv.offsetWidth){
+				posX=document.documentElement.clientWidth-oDiv.offsetWidth;
+			}
+			oDiv.style.left=posX+'px';
+			oDiv.style.top=posY+'px';
 		}
 		document.onmouseup=function(){
 			document.onmousemove=null;
